@@ -27,6 +27,7 @@ body {
     width: 80%;
     max-width: 900px;
     gap: 20px;
+    top: 100px;
 }
 
 /* Profile Section */
