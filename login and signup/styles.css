@@ -1,0 +1,282 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /* Change the first number */
+  /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
+  --gradient-color: linear-gradient(180deg,
+                      hsla(174, 48%, 72%, 0),
+                      hsla(207, 95%, 17%, 1));
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Roboto', sans-serif;
+  --title-font: 'Lora', serif;
+  --biggest-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .625rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+    --tiny-font-size: .688rem;
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: hsl(207, 4%, 99%);
+  background:linear-gradient(180deg,hsla(174, 48%, 72%, 0),hsla(207, 95%, 17%, 1));;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.containerls{
+  background-color: hsl(207, 4%, 99%);
+  border-radius: 30px;
+  box-shadow: 0 5px 15px hsl(207, 4%, 28%);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+.containerls p{
+  font-size: var(--small-font-size);
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.containerls span{
+  font-size: var(--small-font-size);
+}
+
+.containerls a{
+  color: hsl(207, 4%, 28%);
+  font-size: var(--smaller-font-size);
+  text-decoration: none;
+  margin: 15px 0 10px;
+}
+
+.containerls button{
+  background-color: hsl(207, 95%, 17%);
+  color: hsl(207, 4%, 99%);
+  font-size: var(--normal-font-size);
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  font-weight: var(--font-semi-bold);
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.containerls button.hidden{
+  background-color: transparent;
+  border-color: hsl(207, 4%, 99%);
+}
+
+.containerls form{
+  background-color: hsl(207, 4%, 99%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.containerls input{
+  background-color: hsl(207, 4%, 95%);
+  border: none;
+  margin: 8px 0;
+  padding: 10px 20px;
+  font-size: var(--small-font-size);
+  border-radius: 10px;
+  width: 100%;
+  outline: none;
+}
+
+.form-containerls{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in{
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.containerls.active .sign-in{
+  transform: translateX(100%);
+}
+
+.sign-up{
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.containerls.active .sign-up{
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+@keyframes move{
+  0%, 49.99%{
+    opacity: 0;
+    z-index: 1;
+  }
+  50%, 100%{
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+#alt{
+  visibility: hidden;
+}
+#altlogin{
+  text-decoration: underline;
+}
+#altsignup{
+  text-decoration: underline;
+}
+
+.toggle-containerls{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 100px 0 0 100px;
+  z-index: 1000;
+}
+
+.containerls.active .toggle-containerls{
+  transform: translateX(-100%);
+  border-radius: 0 100px 100px 0;
+}
+
+.toggle{
+  background-color: hsl(207, 95%, 17%);
+  height: 100%;
+  background: hsl(207, 95%, 17%);
+  color: hsl(207, 4%, 99%);
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.containerls.active .toggle{
+  transform: translateX(50%);
+}
+
+.toggle-panel{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+  transform: translateX(-200%);
+}
+
+.containerls.active .toggle-left{
+  transform: translateX(0);
+}
+
+.toggle-right{
+  right: 0;
+  transform: translateX(0);
+}
+
+.containerls.active .toggle-right{
+  transform: translateX(200%);
+}
+
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 570px){
+  #def{
+    visibility: hidden;
+  }
+  #alt{
+    visibility: visible;
+  }
+  .toggle-containerls{
+    display: none;
+  }
+  .sign-in{
+    width: 100%;
+  }
+  .sign-up{
+    width: 100%;
+  }
+  .containerls.active .sign-up{
+    transform: translateX(0);
+  }
+  .containerls.active .sign-in{
+    transform: translateX(100%);
+    animation: move 0.6s;
+  }
+}

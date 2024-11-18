@@ -1,0 +1,66 @@
+<!-- long in and sign up  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Login | Signup</title>
+</head>
+<body>
+    <div class="containerls" id="containerls">
+        <div class="form-containerls sign-up box">
+            <form action="">
+                <h1>Create Account</h1>
+                <div>
+
+                </div>
+                <span id="def"> Fill in the fields !</span>
+                <span id="alt"> Already have an account? <span id="altlogin">Log in!</span></span>
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <input type="text" placeholder="Address">
+                <input type="text" placeholder="Contact">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-containerls sign-in box">
+            <form action="">
+                <h1>Log In</h1>
+                <div>
+
+                </div>
+                <span id="def"> Fill in the fields !</span>
+                <span id="alt"> Are you new? <span id="altsignup">Sign up!</span></span>
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <a href="#">Forgot Password?</a>
+                <button>Log in</button>
+            </form>
+        </div>
+        <div class="toggle-containerls">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Already have an account?,<br>
+                        <span>Fill in the fields to continue shopping with us.</span>
+                    </p>
+                    <button class="hidden" id="login">Log In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome !</h1>
+                    <p>Are you new here?<br>
+                        <span>Create an account to access all features.</span>
+                    </p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
